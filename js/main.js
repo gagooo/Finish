@@ -1,10 +1,10 @@
 jQuery(document).ready(function equalize_Flex_Items() {
     var asd = jQuery('.flex-content .flex-item:first').width();
-    jQuery('.flex-content .flex-item:gt(3)').css('max-width', asd);
+    jQuery('.flex-content .flex-item:gt(1)').css('max-width', asd);
     jQuery(window).resize(function () {
         var asd = jQuery('.flex-content .flex-item:first').width();
 //        console.log("Window width - " + jQuery(window).width() + ("   Document width - " + jQuery(document).width()));
-        jQuery('.flex-content .flex-item:gt(3)').css('max-width', asd);
+        jQuery('.flex-content .flex-item:gt(1)').css('max-width', asd);
         if (jQuery(window).width() > 1057) {
             jQuery('#nav_menu').removeClass("collapseNavManu");
             jQuery('#nav_login').removeClass("collapseNavLogin");
@@ -14,7 +14,7 @@ jQuery(document).ready(function equalize_Flex_Items() {
 
 jQuery(document).ready(function fix_Left_Menu() {
     var scrollPos = jQuery(window).scrollTop();
-    if (scrollPos >= 66) {
+    if (scrollPos >= 45) {
         jQuery('#left_menu').addClass("fixed");
     } else {
         jQuery('#left_menu').removeClass("fixed");
@@ -22,7 +22,7 @@ jQuery(document).ready(function fix_Left_Menu() {
     jQuery(window).scroll(function () {
         var scrollPos1 = jQuery(window).scrollTop();
         var scrollPos2 = jQuery("#nav_text").innerHeight();
-        if (scrollPos1 - scrollPos2 >= 66) {
+        if (scrollPos1 - scrollPos2 >= 45) {
             jQuery('#left_menu').addClass("fixed");
         } else {
             jQuery('#left_menu').removeClass("fixed");
@@ -124,6 +124,17 @@ jQuery(document).ready(function open_Nav_text() {
     
 });
 
+jQuery(document).ready(function openTesakani () {
+    jQuery("#tesakani").click(function () {
+        var openTesakani = jQuery(".tesakani").css("display");
+        console.log(openTesakani);
+        if (openTesakani === "none") {
+            jQuery(".tesakani").slideDown(400);
+        } else {
+            jQuery(".tesakani").slideUp(250);
+        }
+    })
+})
 
 
 
